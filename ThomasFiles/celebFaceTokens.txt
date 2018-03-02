@@ -1,2 +1,21 @@
-400d0d271e8a4d0a124f15027edc4815 - Tom Hanks
+e714a0332b9fcba30331839c11a82a72 - Tom Hanks
+{width: 120, top: 99, left: 87, height: 120}
+
+588b9e5c05803f9316f539683a6470f3 - Katy Perry
+{width: 135, top: 76, left: 72, height: 135}
+
+c34abbd64f6b57334a567550e202b7a1 - Taylor Swift
+{width: 128, top: 117, left: 73, height: 128}
+
+d255f97ea3d42cf0166a3b25c2b627f2 - Rowan Atkinson
+{width: 142, top: 85, left: 64, height: 142}
+
+b41dd94a22a363156953339e3fc0be02 - Justin Timberlake
+{width: 151, top: 126, left: 66, height: 151}
+
+04527dbf52e1b8cc5cfc9a05e9e200d1 - Justin Bieber
+{width: 130, top: 129, left: 75, height: 130}
+
+b1d69b7280147a95207a12028e722546 - Daniel Craig
+{width: 120, top: 99, left: 87, height: 120}
 
