@@ -103,23 +103,23 @@ $("img#image-container").prop("src", userImageData);
 
 // Manual FaceToken Generator
 
-// function generateCeleb(){
+function generateCeleb(){
 
-// 	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
+	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
 
-//     $.ajax({
-//       url: queryURL,
-//       method: "POST",
-//       data: {
-//       api_key: "tqTIR8SdydbXwi1jXA2Y_Hr84KLWVSqk",
-//       api_secret: "9dTFmiQM6AbVFi6LoD-kdLnDXPMfcUnB",
-//       image_url: "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg"
-//   	}
-// 	}).done(function(res){
-// 		console.log(res);
-// 		faceToken = res.faces[0].face_token;
-// 		addCelebImage();
-// 	}).fail(function(errorThrown){
-// 		console.error(errorThrown);
-// 	});
-//  };
+    $.ajax({
+      url: queryURL,
+      method: "POST",
+      data: {
+      api_key: "tqTIR8SdydbXwi1jXA2Y_Hr84KLWVSqk",
+      api_secret: "9dTFmiQM6AbVFi6LoD-kdLnDXPMfcUnB",
+      image_url: "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg"
+  	}
+	}).done(function(res){
+		console.log(res);
+		faceToken = res.faces[0].face_token;
+		addCelebImage();
+	}).fail(function(errorThrown){
+		console.error(errorThrown);
+	});
+ };
