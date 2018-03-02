@@ -24,17 +24,15 @@ fileUpload.addEventListener('change', function(event){
 	}).then(function(res){
 		console.log(res);
 		userImageData = res.data.url;
-		queryArray();
+		$("img#image-container").prop("src", userImageData);		
+		checkCelebImages();
 	}).catch(function(err){
 		console.error(err);
 	});
 });
 
-function queryArray(){
-
-$("img#image-container").prop("src", userImageData);
-
-	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
+ function checkCelebImages(){
+	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/search";
 
     $.ajax({
       url: queryURL,
@@ -42,16 +40,16 @@ $("img#image-container").prop("src", userImageData);
       data: {
       api_key: "tqTIR8SdydbXwi1jXA2Y_Hr84KLWVSqk",
       api_secret: "9dTFmiQM6AbVFi6LoD-kdLnDXPMfcUnB",
-      image_url: userImageData
+      image_url: userImageData,
+      faceset_token: facesetToken
   	}
 	}).done(function(res){
 		console.log(res);
-		faceToken = res.faces[0].face_token;
-		addCelebImage();
 	}).fail(function(errorThrown){
 		console.error(errorThrown);
-	});
- };
+	}); 	
+};
+
 
 // FACESET CREATION
 //  function sendCelebImage(){
@@ -73,53 +71,66 @@ $("img#image-container").prop("src", userImageData);
 // 	}); 	
 // };
 
- function addCelebImage(){
-	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/faceset/addface";
+// MANUAL FACE TOKEN FOR CELEBS
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      data: {
-      api_key: "tqTIR8SdydbXwi1jXA2Y_Hr84KLWVSqk",
-      api_secret: "9dTFmiQM6AbVFi6LoD-kdLnDXPMfcUnB",
-      faceset_token: facesetToken,
-      face_tokens: faceToken
-  	}
-	}).done(function(res){
-		console.log(res);
-		console.log(res.data.face_added)
-	}).fail(function(errorThrown){
-		console.error(errorThrown);
-	}); 	
-};
+// function queryArray(){
 
+// 	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
 
+//     $.ajax({
+//       url: queryURL,
+//       method: "POST",
+//       data: {
+//       api_key: "tqTIR8SdydbXwi1jXA2Y_Hr84KLWVSqk",
+//       api_secret: "9dTFmiQM6AbVFi6LoD-kdLnDXPMfcUnB",
+//       image_url: userImageData
+//   	}
+// 	}).done(function(res){
+// 		console.log(res);
+// 		faceToken = res.faces[0].face_token;
+// 		addImage();
+// 	}).fail(function(errorThrown){
+// 		console.error(errorThrown);
+// 	});
+//  };
 
+// function generateCeleb(){
 
+// 	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
 
+//     $.ajax({
+//       url: queryURL,
+//       method: "POST",
+//       data: {
+//       api_key: "tqTIR8SdydbXwi1jXA2Y_Hr84KLWVSqk",
+//       api_secret: "9dTFmiQM6AbVFi6LoD-kdLnDXPMfcUnB",
+//       image_url: "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg"
+//   	}
+// 	}).done(function(res){
+// 		console.log(res);
+// 		faceToken = res.faces[0].face_token;
+// 		addCelebImage();
+// 	}).fail(function(errorThrown){
+// 		console.error(errorThrown);
+// 	});
+//  };
 
+//  function addImage(){
+// 	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/faceset/addface";
 
-
-
-// Manual FaceToken Generator
-
-function generateCeleb(){
-
-	var queryURL = "https://api-us.faceplusplus.com/facepp/v3/detect";
-
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      data: {
-      api_key: "tqTIR8SdydbXwi1jXA2Y_Hr84KLWVSqk",
-      api_secret: "9dTFmiQM6AbVFi6LoD-kdLnDXPMfcUnB",
-      image_url: "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg"
-  	}
-	}).done(function(res){
-		console.log(res);
-		faceToken = res.faces[0].face_token;
-		addCelebImage();
-	}).fail(function(errorThrown){
-		console.error(errorThrown);
-	});
- };
+//     $.ajax({
+//       url: queryURL,
+//       method: "POST",
+//       data: {
+//       api_key: "tqTIR8SdydbXwi1jXA2Y_Hr84KLWVSqk",
+//       api_secret: "9dTFmiQM6AbVFi6LoD-kdLnDXPMfcUnB",
+//       faceset_token: facesetToken,
+//       face_tokens: faceToken
+//   	}
+// 	}).done(function(res){
+// 		console.log(res);
+// 		console.log(res.data.face_added)
+// 	}).fail(function(errorThrown){
+// 		console.error(errorThrown);
+// 	}); 	
+// };
