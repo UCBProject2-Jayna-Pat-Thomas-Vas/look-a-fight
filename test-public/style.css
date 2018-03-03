@@ -3,11 +3,11 @@
 	padding: 0;
 	margin: 0;
   }
-  
+
   body {
 	background: #22313f;
   }
-  
+
   #starfield {
 	position: fixed;
 	top: 0;
@@ -47,7 +47,7 @@ p {
 	letter-spacing: 3px;
 	font-family: 'Roboto','Helvetica','Arial',sans-serif;
   }
-  p > span > a {
+  p > span > a, a {
 	font-weight: 700;
 	text-decoration: none;
 	color: #d64541;
@@ -64,11 +64,15 @@ p {
 	text-decoration: none;
 	}
 
-	img {
+	/* img {
 		position: absolute;
 		z-index: 2;
-		max-width: 20%;	
+		max-width: 20%;
 		margin-left: -12%;
+	} */
+
+	img {
+		max-width: 100%;
 	}
 
 	.login {
@@ -105,8 +109,12 @@ p {
 	}
 
 	h4 {
-		padding-top: 45px; 
-	}
+    padding-top: 45px;
+  }
+
+  h5 {
+    padding-bottom: 20%;
+  }
 
 	.icons {
 		margin-left: 10%;
@@ -118,13 +126,9 @@ Leaderboard
 .leaderboard {
 	position: relative;
 	z-index: 1;
-	margin-top: 20%; 
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 385px;
-  height: 408px;
+	margin: 0 auto;
+  width: 285px;
+  height: 308px;
   background: -webkit-gradient(linear, left top, left bottom, from(#3a404d), to(#181c26));
   background: linear-gradient(to bottom, #3a404d, #181c26);
   border-radius: 10px;
@@ -305,13 +309,11 @@ Leaderboard
 	z-index: 1;
 	background: -webkit-gradient(linear, left top, left bottom, from(#414857), to(#363b47));
   background: linear-gradient(to bottom, #414857, #363b47);
-	
+
 
 }
 
 .navbar-brand {
-  color: #f5d76e;
-	text-shadow: 0 0 50px #3e4955;
 	text-transform: uppercase;
 	font-family: 'Roboto','Helvetica','Arial',sans-serif;
 	letter-spacing: 1px;
@@ -325,9 +327,215 @@ Leaderboard
 		border-top: 10px solid #d64541;
 		margin-top: 8%;
   }
-  
+
   .celeb-container, .fight-container {
     background: #19242e;
   }
 
-	
+  .detailed-footer {
+    position: relative;
+    z-index: 1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fa6855), to(#d64541));
+	  background: linear-gradient(to bottom, #fa6855, #d64541);
+	  border-top: 10px solid #d64541;
+	  padding-top: 0rem !important;
+	  margin-top: 0rem !important;
+  }
+
+  .page-footer {
+    position: relative;
+    z-index: 1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fa6855), to(#d64541));
+  background: linear-gradient(to bottom, #fa6855, #d64541);
+  padding-top: 0rem !important;
+  margin-top: 0rem !important;
+  }
+
+  .battle-field {
+    position: relative;
+    /* height: 100vh; */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .player {
+    left: 100px;
+  }
+
+  .enemy {
+    right: 100px;
+  }
+
+  .enemy,
+  .player {
+    position: absolute;
+    top: 50%;
+    width: 90px;
+    height: 90px;
+    margin-top: -25px;
+  }
+  .enemy .health-bar,
+  .player .health-bar {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: #e03e28;
+  }
+  .enemy .health-bar .health,
+  .player .health-bar .health {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: inherit;
+    width: 100%;
+    background-color: #414857;
+    transform: translate3d(0, 0, 0);
+    transition: width 0.3s cubic-bezier(0.08, 0.91, 0.08, 0.93);
+  }
+  .enemy img,
+  .player img {
+    width: inherit;
+    margin-top: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+
+  .slash-anim:before,
+  .triple-slash:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 3;
+    width: 0px;
+    height: 0px;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 120px solid #fff;
+    transform: rotateZ(45deg);
+    animation: attackSlash 0.5s cubic-bezier(0.08, 0.91, 0.08, 0.93) 1;
+  }
+
+  .triple-slash:before {
+    box-shadow: 10px -10px 0 #fff, -10px -10px 0 #fff;
+  }
+
+  .nova img {
+    animation: nova 1s cubic-bezier(0.08, 0.91, 0.08, 0.93) 1, shake 0.15s linear 3;
+  }
+
+  .meteors {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    margin: 0 auto;
+    background-color: #ff592c;
+    border-radius: 50%;
+    animation: meteors 0.75s ease-in 1;
+  }
+
+  .stunned {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -40px;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    border: 4px dashed yellow;
+    border-radius: 50%;
+    animation: stunrotate 1.5s linear infinite;
+  }
+
+  .controls {
+    /* position: absolute;
+    bottom: 10vh; */
+    left: 0;
+    right: 0;
+    width: 220px;
+    margin: 30px auto;
+    padding: 0;
+    list-style: none;
+  }
+  .controls li {
+    position: relative;
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    padding: 8px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    cursor: pointer;
+  }
+  .controls li:active {
+    transform: translateY(2px);
+  }
+  .controls li:last-child {
+    margin-right: 0px;
+  }
+
+  .attack {
+    background: url(images/faces.png) no-repeat center center #414857;
+  }
+
+  .frost-nova {
+    background: url(images/boxing.png) no-repeat center center #414857;
+  }
+
+  .ice-shield {
+    background: url(images/oscar.png) no-repeat center center #414857;
+  }
+
+  .attack,
+  .frost-nova,
+  .ice-shield {
+    background-size: cover;
+  }
+
+  .cooldown {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.75);
+    transform: translateY(100%);
+  }
+
+  .ice-armor:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    /*      background-color: rgba(0,155,255,0.25);*/
+    border-radius: 50%;
+    animation: icearmor 1s linear infinite, rotate 0.75s linear infinite;
+  }
+
+  span.badge-secondary {
+    background-color: #414857
+
+  }
+  
+	.squared-image {
+    width: 286px;
+    height: 286px;
+    background-position: center;
+    background-size: cover;
+  }

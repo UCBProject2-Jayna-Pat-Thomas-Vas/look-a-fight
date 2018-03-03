@@ -62,4 +62,4 @@ var draw = function() {
 	window.requestAnimationFrame(draw);
 };
 
-initialise();
+initialise()
