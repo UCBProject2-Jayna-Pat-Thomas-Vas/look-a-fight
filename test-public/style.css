@@ -506,28 +506,6 @@ Leaderboard
     background-size: cover;
   }
 
-  .cooldown {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    width: inherit;
-    height: inherit;
-    background-color: rgba(0, 0, 0, 0.75);
-    transform: translateY(100%);
-  }
-
-  .ice-armor:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: 0;
-    width: 90px;
-    height: 90px;
-    /*      background-color: rgba(0,155,255,0.25);*/
-    border-radius: 50%;
-    animation: icearmor 1s linear infinite, rotate 0.75s linear infinite;
-  }
-
   span.badge-secondary {
     background-color: #414857
 
