@@ -2,7 +2,7 @@ var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/djjvwjjdg/upload';
 var CLOUDINARY_UPLOAD_PRESET = 'sehejxiu';
 
 var imgPreview = document.getElementById('img-preview');
-var fileUpload = document.getElementById('file-upload');
+var fileUpload = document.getElementById('inputGroupFile01');
 
 var userImageUrl = "";
 var faceToken = "";
@@ -26,7 +26,9 @@ fileUpload.addEventListener('change', function(event){
 		console.log(res);
 		userImageUrl = res.data.url;
 		$("img#image-container").prop("src", userImageUrl);		
-		checkCelebImages();
+		$("#compare-button").on('click', function(){
+			checkCelebImages();
+		});
 	}).catch(function(err){
 		console.error(err);
 	});
@@ -47,7 +49,7 @@ fileUpload.addEventListener('change', function(event){
 	}).done(function(res){
 		console.log(res);
 		if (res.faces.length === 0){
-			$("img#image-container2").prop("src", "https://i.imgflip.com/g7hps.jpg");
+			$("img#look-alike-image").prop("src", "https://i.imgflip.com/g7hps.jpg");
 		} else {
 		facePlusReturnToken = res.results[0].face_token;
 		propCelebImage();
@@ -59,26 +61,25 @@ fileUpload.addEventListener('change', function(event){
 
 function propCelebImage(){
 	if (facePlusReturnToken === "e714a0332b9fcba30331839c11a82a72"){
-		$("img#image-container2").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg");
+		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg");
 	} else if (facePlusReturnToken === "588b9e5c05803f9316f539683a6470f3"){
-		$("img#image-container2").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Katy-Perry.jpg");
+		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Katy-Perry.jpg");
 	} else if (facePlusReturnToken === "c34abbd64f6b57334a567550e202b7a1"){
-		$("img#image-container2").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/taylor-swift.jpg");
+		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/taylor-swift.jpg");
 	} else if (facePlusReturnToken === "d255f97ea3d42cf0166a3b25c2b627f2"){
-		$("img#image-container2").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Rowan-Atkinson.jpg");
+		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Rowan-Atkinson.jpg");
 	} else if (facePlusReturnToken === "b41dd94a22a363156953339e3fc0be02"){
-		$("img#image-container2").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/justin-timberlake.jpg");
+		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/justin-timberlake.jpg");
 	} else if (facePlusReturnToken === "04527dbf52e1b8cc5cfc9a05e9e200d1"){
-		$("img#image-container2").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Justin-Bieber.jpg");
+		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Justin-Bieber.jpg");
 	} else if (facePlusReturnToken === "b1d69b7280147a95207a12028e722546"){
-		$("img#image-container2").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/DANIEL-CRAIG.jpg");
+		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/DANIEL-CRAIG.jpg");
 	} else {
-		$("img#image-container2").prop("src", "https://i.imgflip.com/g7hps.jpg");
+		$("img#look-alike-image").prop("src", "https://i.imgflip.com/g7hps.jpg");
 	}
-}
+};
 
-
-
+// Add users uploaded image to the database.
 
 
 
