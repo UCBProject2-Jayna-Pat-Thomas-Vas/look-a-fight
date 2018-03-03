@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 <body>
 
@@ -54,28 +54,51 @@
         <div class="h4">Upload a front facing photo</div>
 
         <div class="mb-3">
-          <img width="300px" src="images/profile-placeholder.png">
+          <img width="300px" id="image-container" src="images/profile-placeholder.png">
         </div>
 
         <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Upload</span>
-          </div>
+
           <div class="custom-file">
             <input type="file" class="custom-file-input" id="inputGroupFile01">
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            <label class="custom-file-label" for="inputGroupFile01">.jpg .png</label>
           </div>
         </div>
-        <button type="button" class="btn btn-outline-danger">Upload</button>
+        <button type="button" class="btn btn-outline-danger" id="compare-button">Compare</button>
 
       </div>
 
       <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
         <div class="h4 text-center text-muted">Who will your celebrity look-a-like be?</div>
+        <img width="300px" id="look-alike-image" src="https://image.flaticon.com/icons/svg/1/1954.svg"></img>
+                <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">Name</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Strength</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Hitpoints</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Total Wins</th>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
-    <!-- Step 2 -->
+    <div class="text-center">
+    <button type="button" class="btn btn-lg btn-danger">Enter Battleroom</button>
+    </div>
+
+<!-- Step 2 
     <div class="d-flex justify-content-center">
 
       <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
@@ -96,8 +119,8 @@
       </div>
     </div>
 
-    <!-- Step 3 -->
-    <div class="d-flex justify-content-center">
+    Step 3 -->
+    <!-- <div class="d-flex justify-content-center">
 
       <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
 
@@ -114,7 +137,7 @@
 
         <div class="mb-3">
           <div class="squared-image" style="background-image: url(https://pbs.twimg.com/profile_images/378800000040874495/f9841f8361b245eeb1645015ac55a4e7.png);"></div>
-          <!-- <img width="300px" src="https://pbs.twimg.com/profile_images/378800000040874495/f9841f8361b245eeb1645015ac55a4e7.png"> -->
+          <img width="300px" src="https://pbs.twimg.com/profile_images/378800000040874495/f9841f8361b245eeb1645015ac55a4e7.png">
         </div>
 
         <table class="table">
@@ -138,10 +161,10 @@
           </tbody>
         </table>
 
-        <button type="button" class="btn btn-danger">Enter Battleroom</button>
+        
 
       </div>
-    </div>
+    </div> -->
 
     </div>
 
@@ -168,7 +191,9 @@
   <!--/.Footer-->
 
 
-
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
     <script src="view.js"></script>
 </body>
 </html>
