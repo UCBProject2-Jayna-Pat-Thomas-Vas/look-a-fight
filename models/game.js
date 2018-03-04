@@ -1,17 +1,20 @@
 module.exports = function(sequelize, DataTypes) {
   var Game = sequelize.define("Game", {
-    ID: {type: Sequelize.INTEGER, autoincrement: true},
-    userID: {type: Sequelize.INTEGER, allowNull: false,
-      references: {model: User, key: 'id'}},
-    lookALikeID: {type: Sequelize.INTEGER, allowNull: false,
-      references: {model: Celebrity, key: 'id'}},
-    opponentID: {type: Sequelize.INTEGER, allowNull: false,
-      references: {model: Celebrity, key: 'id'}},
-    winnerID: {type: Sequelize.INTEGER, allowNull: true},
-    winnerType: {type: Sequelize.STRING, allowNull: true,
+    ID: {type: DataTypes.INTEGER, autoincrement: true, primaryKey: true},
+    userID: {type: DataTypes.INTEGER, allowNull: false
+      // references: {model: user, key: 'id'}
+    },
+    lookALikeID: {type: DataTypes.INTEGER, allowNull: false
+                    // references: {model: celebrity.js, key: 'id'}
+                  },
+    opponentID: {type: DataTypes.INTEGER, allowNull: false
+      // references: {model: celebrity, key: 'id'}
+    },
+    winnerID: {type: DataTypes.INTEGER, allowNull: true},
+    winnerType: {type: DataTypes.STRING, allowNull: true,
       isIn: [['user', 'opponent']],},
-    createdAt: {type: Sequelize.DATE, defaultValue: Sequelize.NOW},
-    updatedAt: {type: Sequelize.DATE, defaultValue: Sequelize.NOW}
+    createdAt: {type: DataTypes.DATE, defaultValue: DataTypes.NOW},
+    updatedAt: {type: DataTypes.DATE, defaultValue: DataTypes.NOW}
   });
 
   Game.associate = function(models) {

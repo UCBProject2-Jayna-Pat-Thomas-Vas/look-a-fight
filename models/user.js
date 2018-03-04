@@ -1,14 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("user", {
-    id: {type: Sequelize.INTEGER, autoincrement: true},
-    name: {type: Sequelize.STRING, allowNull: false},
-    email: {type: Sequelize.STRING, allowNull: false, isEmail: true},
-    imageURL: {type: Sequelize.STRING, isUrl: true},
-    totalWins: {type: Sequelize.INTEGER, defaultValue: 0, allowNull: false},
-    createdAt: {type: Sequelize.DATE, defaultValue: Sequelize.NOW,allowNull: false}
-    updatedAt: {type: Sequelize.DATE, allowNull: true}
-    delete_flag: {type: Sequelize.BOOLEAN, default: false, allowNull: false}
-    delete_date: {type: Sequelize.BOOLEAN, allowNull: true}
+    id: {type: DataTypes.INTEGER, autoincrement: true, primaryKey: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    email: {type: DataTypes.STRING, allowNull: false, isEmail: true},
+    imageURL: {type: DataTypes.STRING, isUrl: true},
+    totalWins: {type: DataTypes.INTEGER, defaultValue: 0, allowNull: false},
+    createdAt: {type: DataTypes.DATE, defaultValue: DataTypes.NOW,allowNull: false},
+    updatedAt: {type: DataTypes.DATE, allowNull: true},
+    delete_flag: {type: DataTypes.BOOLEAN, default: false, allowNull: false},
+    delete_date: {type: DataTypes.BOOLEAN, allowNull: true}
   });
 
   User.associate = function(models) {
