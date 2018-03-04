@@ -20,11 +20,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Static directory to be served
-app.use(express.static("app/public"));
+app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./app/routes/api-routes.js")(app);
+// require("./routes/celebrity-api-routes.js")(app);
+// require("./routes/user-api-routes.js")(app);
+// require("./routes/game-api-routes.js")(app);
 
 // Starts the server to begin listening
 // =============================================================
