@@ -1,44 +1,44 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/Celebrity", function(req, res) {
+  app.get("/api/User", function(req, res) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
-    db.Celebrity.findAll({
+    db.User.findAll({
       include: [db.Post]
-    }).then(function(dbCelebrity) {
-      res.json(dbCelebrity);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
-  app.get("/api/Celebrity/:id", function(req, res) {
+  app.get("/api/User/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
-    db.Celebrity.findOne({
+    db.User.findOne({
       where: {
         id: req.params.id
       },
       include: [db.Post]
-    }).then(function(dbCelebrity) {
-      res.json(dbCelebrity);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
-  app.post("/api/Celebrity", function(req, res) {
-    db.Celebrity.create(req.body).then(function(dbCelebrity) {
-      res.json(dbCelebrity);
+  app.post("/api/User", function(req, res) {
+    db.User.create(req.body).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
-  app.put("/api/Celebrity/:id", function(req, res) {
-    db.Celebrity.put({
+  app.put("/api/User/:id", function(req, res) {
+    db.User.put({
       where: {
         id: req.params.id
       }
-    }).then(function(dbCelebrity) {
-      res.json(dbCelebrity);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
