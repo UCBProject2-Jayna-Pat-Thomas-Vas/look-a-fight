@@ -6,6 +6,8 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
+var fs = require("fs");
 
 // Sets up the Express App
 // =============================================================
@@ -20,13 +22,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Static directory to be served
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "test-public")));
 
 // Routes
 // =============================================================
 // require("./routes/celebrity-api-routes.js")(app);
 // require("./routes/user-api-routes.js")(app);
 // require("./routes/game-api-routes.js")(app);
+
+app.get('/', function(req, res){
+	res.send('index.html');
+});
+
+
+
 
 // Starts the server to begin listening
 // =============================================================
