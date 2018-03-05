@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Celeb Look-a-Fight Celebrity</title>
+    <title>Celeb-Chose</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css">
@@ -30,20 +30,23 @@
                     <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="awards.html">Awards</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="account.html">Account Settings</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a href="index.html">Log Out</a></li>
-                        </ul>
+                    <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="account.html">Account</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link">|</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="index.html">Logout</a>
                     </li>
                   </ul>
               </div>
           </div>
       </nav>
 
-    <div class="celeb-container">
+      <canvas id="starfield"></canvas>
+
+    <div class="container">
         <div class="row text">
     <section class="overlay">
             <p class="text-center">&#9733;<br>Look-A-Like</p>
@@ -74,9 +77,9 @@
 
       <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
         <div class="h4 text-center text-muted">Who will your look-a-like be?</div>
-        <div class="squared-image" style="background-image: url(https://image.flaticon.com/icons/svg/1/1954.svg);"></div>
+        <div class="squared-image" style="background-image: url(images/icon.png);"></div>
         <!-- <img width="300px" id="look-alike-image" src="https://image.flaticon.com/icons/svg/1/1954.svg"></img> -->
-                <table class="table">
+                <table class="table mt-3">
           <tbody>
             <tr>
               <th scope="row">Name</th>
