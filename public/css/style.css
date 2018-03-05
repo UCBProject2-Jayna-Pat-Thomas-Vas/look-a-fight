@@ -72,7 +72,7 @@ p {
 		max-width: 100%;
 	}
 
-	.login {
+	.login, .d-flex {
 		position: relative;
 		z-index: 1;
 	}
@@ -96,19 +96,6 @@ p {
 		font-family: 'Roboto','Helvetica','Arial',sans-serif;
 	}
 
-	h3 {
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
-
-	h4 {
-    padding-top: 45px;
-  }
-
-  h5 {
-    padding-bottom: 20%;
-  }
-
 	.icons {
 		margin-left: 1%;
   }
@@ -116,6 +103,8 @@ p {
   .btn {
     font-weight: 100;
     letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
   }
 
 .navbar {
@@ -144,7 +133,7 @@ p {
   }
 
   .collection-subheading {
-   color: #bdc3c7;
+   color: #e1e1e1;
    font-weight: 100;
    text-shadow: 0 0 50px black;
    letter-spacing: 3px;
@@ -197,14 +186,11 @@ Footer
 Battle Room
 --------------------*/
 
-  .celeb-container, .fight-container {
-  background: #19242e;
-}
-
   .battle-buttons {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
+    z-index: 1;
   }
 
   .controls {
@@ -212,7 +198,7 @@ Battle Room
     bottom: 10vh; */
     left: 0;
     right: 0;
-    width: 220px;
+    width: 55px;
     margin: 30px auto;
     padding: 0;
     list-style: none;
@@ -227,12 +213,13 @@ Battle Room
     margin-bottom: 30px;
     padding: 8px;
     line-height: 40px;
-    text-align: center;
+    text-align: left;
     color: #fff;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #fff;
     cursor: pointer;
+    z-index: 1;
   }
 
   .controls li:active {

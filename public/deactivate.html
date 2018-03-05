@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Celeb Look-a-Fight Account</title>
+    <title>Celeb-Deactivate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css">>
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -29,13 +29,14 @@
                     <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="awards.html">Awards</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="account.html">Account Settings</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a href="index.html">Log Out</a></li>
-                        </ul>
+                    <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="account.html">Account</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link">|</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="index.html">Logout</a>
                     </li>
                   </ul>
               </div>
@@ -47,7 +48,7 @@
         <div class="container">
           <div class="row text">
             <section class="overlay">
-              <p class="text-center">&#9733; <br>Account</p>
+              <p class="text-center">&#9733;<br>Account</p>
             </section>
           </div>
         </div>
@@ -55,43 +56,28 @@
     <div class="login">
         <div class="panel-panel default">
                 <div class="card border-danger mt-3 mb-5" style="max-width: 30rem;">
-                        <div class="card-header">Account Settings</div>
+                        <div class="card-header">Deactivate Account</div>
                         <div class="card-body">
                     
-                            <!-- Text input-->
-                            <div class="form-group">
-                              <label class=" control-label" for="textinput">Change Email ID</label>  
-                              <div class="">
-                              <input id="textinput" name="textinput" type="text" placeholder="current email " class="form-control input-md">
-                              </div>
-                            </div>
-
-                            <!-- Password input-->
-                            <div class="form-group">
-                              <label class="control-label" for="passwordinput">new password</label>
-                                <input id="passwordinput" name="passwordinput" type="password" placeholder="new password" class="form-control input-md">
-                                
-                              </div>
-
-                            <!-- Password input-->
-                            <div class="form-group">
-                              <label class="control-label" for="passwordinput">repeat password</label>
-                              <div class="">
-                                <input id="passwordinput" name="passwordinput" type="password" placeholder="repeat password" class="form-control input-md">
-                                
-                              </div>
-
-                              <br>
-
-                              <button type="button" class="btn btn-danger btn-lg btn-block">Save Changes</button>
+                           <h4>We are sorry to see you go!<br><br>We understand the need for a break some times.<br><br>Your Look-A-Like, Card-Collection and Stats will all be here for you whe you are ready to come back!</h4>
 
                               <hr>
 
                             <!-- Button -->
                             <div class="form-group">
-                              <label class="control-label" for="singlebutton">Deactivate my account</label>
+                              <label class="control-label" for="singlebutton">I've put in the goodfight and need some rest.</label>
                               <div class="">
-                                <button id="singlebutton" name="singlebutton" class="btn btn-outline-danger">deactivate</button>
+                                <button id="deactivate-button" name="singlebutton" class="btn btn-danger">deactivate</button>
+                              </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- Button -->
+                            <div class="form-group">
+                              <label class="control-label" for="singlebutton">Oops.</label>
+                              <div class="">
+                                <button name="singlebutton" href="account.html" class="btn btn-outline-danger">nevermind</button>
                               </div>
                             </div>
            
@@ -180,6 +166,6 @@
     
          
 
-    <script src="view.js"></script>
+    <script src="js/view.js"></script>
 </body>
 </html>
