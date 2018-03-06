@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Static directory to be served
-app.use(express.static(path.join(__dirname, "test-public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 // =============================================================
