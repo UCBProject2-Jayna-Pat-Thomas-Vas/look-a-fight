@@ -1,27 +1,56 @@
-module.exports = function(sequelize, DataTypes) {
+var Celebrity = require('./celebrity.js');
+var User = require('./user.js');
+
+module.exports = function(sequelize, Sequelize) {
   var Game = sequelize.define("Game", {
-    ID: {type: DataTypes.INTEGER, autoincrement: true, primaryKey: true},
-    userID: {type: DataTypes.INTEGER, allowNull: false
-      // references: {model: user, key: 'id'}
-    },
-    lookALikeID: {type: DataTypes.INTEGER, allowNull: false
-                    // references: {model: celebrity.js, key: 'id'}
+
+    id: {
+          type: Sequelize.INTEGER,
+          autoIncrement: true,
+          primaryKey: true
+        },
+
+    userId: {
+              type: Sequelize.INTEGER,
+              allowNull: false,
+            },
+
+    lookALikeId: {
+                  type: Sequelize.INTEGER,
+                  allowNull: false,
                   },
-    opponentID: {type: DataTypes.INTEGER, allowNull: false
-      // references: {model: celebrity, key: 'id'}
-    },
-    winnerID: {type: DataTypes.INTEGER, allowNull: true},
-    winnerType: {type: DataTypes.STRING, allowNull: true,
-      isIn: [['user', 'opponent']],},
-    createdAt: {type: DataTypes.DATE, defaultValue: DataTypes.NOW},
-    updatedAt: {type: DataTypes.DATE, defaultValue: DataTypes.NOW}
+
+    opponentId: {
+                  type: Sequelize.INTEGER,
+                  allowNull: false
+                },
+
+    winnerId: {
+                type: Sequelize.INTEGER,
+                allowNull: true
+              },
+
+    winnerType: {
+                  type: Sequelize.STRING,
+                  allowNull: true,
+                  isIn: {
+                    args: [['user', 'opponent']],
+                    msg: "Must be either 'user' or 'opponent'."
+                  } 
+                },
+
+    createdAt: {
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.NOW,
+                allowNull: false
+              },
+
+    updatedAt: {
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.NOW
+              }
   });
 
-  Game.associate = function(models) {
-    // Associating Game with Games
-    Game.hasOne(models.User, {});
-    Game.hasOne(models.Celebrity,{});
-  };
   return Game;
 };
 
