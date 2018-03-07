@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 require("./routes/celebrity-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/game-api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 // display home page
 app.get('/', function(req, res){
