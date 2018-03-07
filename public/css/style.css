@@ -252,6 +252,11 @@ Battle Room
     background-color: #414857
   }
 
+  audio {
+    position: relative;
+    z-index: 1;
+  }
+
 /*--------------------
 Leaderboard
 --------------------*/
