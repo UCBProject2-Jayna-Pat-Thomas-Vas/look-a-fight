@@ -56,17 +56,13 @@ $("#sign-up-submit").on("click", function(){
 
 });
 
-// Play and pause music 
+// Play sound effects
 
 var audioElement = document.createElement("audio");
-  audioElement.setAttribute("src", "audio/battle-begins.mp3");
+  audioElement.setAttribute("src", "audio/fistPunch-vocal.mp3");
 
-       $(".play-button").on("click", function() {
+       $("#battle-btn").on("click", function() {
          audioElement.play();
-       });
-
-       $(".pause-button").on("click", function() {
-         audioElement.pause();
        });
 
 function Celebrity(name, image, strength, hitpoints, special, playing){
