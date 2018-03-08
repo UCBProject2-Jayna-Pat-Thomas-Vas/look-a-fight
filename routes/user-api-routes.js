@@ -1,44 +1,61 @@
 var db = require("../models");
 
+// Routes
+
 module.exports = function(app) {
-  app.get("/api/User", function(req, res) {
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
-    db.User.findAll({
-      include: [db.Post]
-    }).then(function(dbUser) {
-      res.json(dbUser);
+
+  // GET route for getting all of the users
+  app.get("/api/users", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.User.findAll({}).then(function(User) {
+      // We have access to the users as an argument inside of the callback function
+      res.json(User);
     });
   });
 
-  app.get("/api/User/:id", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
-    db.User.findOne({
-      where: {
-        id: req.params.id
-      },
-      include: [db.Post]
-    }).then(function(dbUser) {
-      res.json(dbUser);
+  // POST route for saving a new user
+  app.post("/api/users", function(req, res) {
+    // create takes an argument of an object describing the item we want to
+    // insert into our table.
+    db.User.create({
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    }).then(function(User) {
+      // We have access to the new user as an argument inside of the callback function
+      res.json(User);
     });
   });
 
-  app.post("/api/User", function(req, res) {
-    db.User.create(req.body).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-
-  app.put("/api/User/:id", function(req, res) {
-    db.User.put({
+  // DELETE route for deleting users. We can get the id of the user to be deleted from
+  // req.params.id
+  app.delete("/api/users/:id", function(req, res) {
+    // We just have to specify which user we want to destroy with "where"
+    db.User.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbUser) {
-      res.json(dbUser);
+    }).then(function(User) {
+      res.json(User);
+    });
+  });
+
+  // PUT route for updating users. We can get the updated user data from req.body
+  app.put("/api/users", function(req, res) {
+    // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    db.User.update({
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(User) {
+      res.json(User);
     });
   });
 

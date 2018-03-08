@@ -7,7 +7,7 @@ var fs = require("fs");
 
 // Express App
 var app = express();
-var PORT = process.env.PORT || 8080	;
+var PORT = process.env.PORT || 5000	;
 
 //get the body of the response in json
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,7 +33,7 @@ var models = require('./models');
 //Sync Database and start server
 models.sequelize.sync().then(function() {
 	console.log('Database is all good.');
-	app.listen(8080, function(err) { 
+	app.listen(process.env.PORT || 5000, function(err) { 
     	if (!err)
         	console.log("Site is live");
     	else console.log(err);

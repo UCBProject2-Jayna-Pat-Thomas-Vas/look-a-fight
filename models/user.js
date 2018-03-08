@@ -14,7 +14,7 @@ module.exports = function(sequelize, Sequelize) {
 
     userName:{
               type: Sequelize.STRING,
-              allowNull: false
+              allowNull: true
             },
 
     email: {
@@ -48,7 +48,7 @@ module.exports = function(sequelize, Sequelize) {
 
     deleteFlag: {
                   type: Sequelize.BOOLEAN,
-                  default: false,
+                  defaultValue: false,
                   allowNull: false
                 },
     deleteDate: {
