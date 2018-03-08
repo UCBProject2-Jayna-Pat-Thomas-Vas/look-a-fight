@@ -450,7 +450,7 @@ Leaderboard
 }
 
 
-.battle-field .card {
+.battle-field .card, .choose-container .card {
   flex-grow: 1;
   flex-shrink: 1;
   width: 50%;
