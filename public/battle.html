@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Celeb-Battle</title>
+    <title>Celeb-Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/sandstone/bootstrap.min.css">
@@ -11,122 +11,158 @@
 </head>
 <body>
 
-      <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-          <a class="navbar-brand js-scroll-trigger text-left" href="#page-top">Celebrity Look-a-Fight</a>
-          <button class="navbar-toggler btn-outline-danger navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-          </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ml-auto">
-                    <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="choose-celeb.html">Look-A-Like</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="battle.html">Battle Room</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="awards.html">Awards</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="account.html">Account</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link">|</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index.html">Logout</a>
-                    </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
+    <canvas id="starfield"></canvas>
 
-   <canvas id="starfield"></canvas>
-      
     <div class="container">
-      <div class="row text">
-        <section class="overlay">
-          <p class="text-center">&#9733;<br>Battle Room</p>
-        </section>
-      </div>
-
-      <div class="text-center">
-
-          <audio controls class="mb-5">
-              <source src="audio/battle-begins.mp3" type="audio/mpeg" />
-              <!-- <source src="audio/epic-music.mp3" type="audio/mpeg" /> -->
-            </audio>
-
-    </div>
-
-
-      <div class="battle-field">
-        <div class="d-flex justify-content-center align-items-start">
-
-          <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
-            <div class="h6">Health</div>
-            <div class="health-bar"><div class="health"></div></div>
-            <div class="progress mb-3">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            <div class="">
-              <img id="users-game-celeb-image" width="300px" src="https://pbs.twimg.com/profile_images/378800000040874495/f9841f8361b245eeb1645015ac55a4e7.png">
-            </div>
-            <div class="h5 mt-3 text-uppercase"><a>YOU:&nbsp&nbsp</a>Ricky Martin</div>
-          </div>
-
-          <h1><span class="badge badge-secondary d-none d-sm-block m-1 m-md-3">VS</span></h1>
-
-          <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
-            <div class="h6">Health</div>
-            <div class="progress mb-3">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            
-            <div class="squared-image" style="background-image: url(https://a2-images.myspacecdn.com/images04/4/c3989a00e2954580a2748273a5727887/300x300.jpg);"></div>
-            <div class="h5 mt-3 text-uppercase"><a>OPPONENT:&nbsp&nbsp</a>Enrique Iglesias </div>
-          </div>
-
+        <div class="row text">
+            <section class="overlay">
+                <p class="text-center">&#9733;<br>Celebrity<br>Look-A-Fight!<span>Login to play or <a href="sign-up.html">sign-up here</a></span></p>
+            </section>
         </div>
-      </div>
-
-          <div class="battle-buttons">
-          </div>
-          <ul class="controls">
-            <!-- <li class="faces-button"></li> -->
-            <li class="gloves-button"></li>
-            <!-- <li class="oscar-button"></li> -->
-          </ul>
-          <div class="clearfix"></div>
     </div>
 
+    <div class="login">
+        <div class="panel-panel default">
+                <div class="card border-danger mb-3" style="max-width: 30rem;">
+                        <div class="card-header">Login</div>
+                            <div class="card-body">
+                                 <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Username</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1">
+                                      </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Password</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1">
+                                    </div>
+
+                                    <button type="button" class="btn btn-outline-danger float-right">PLAY</button>
+                                  </form>
+                            </div>
+                </div>
+        </div>
+    </div>
+
+       <!-- Services -->
+        <section id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h3 class="section-subheading text-muted font-italic pt-3 pb-3">Find your look-a-like and get ready to fight!</h3>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="icons">
+                            <img src="images/faces.png" alt="Theater faces" height="52" width="52">
+                        </span>
+                        <h4 class="service-heading pt-4">Celebrity Look-A-Like</h4>
+                        <h5 class="text-muted pb-5">We will find your celebrity look-a-like using Face++ API. You will be matched with a celebrity in our database with the highest conifidence score in facial similarity.</h5>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span class="icons">
+                            <img src="images/boxing-gloves.png" alt="Boxing gloves" height="52" width="52">
+                        </span>
+                        <h4 class="service-heading pt-4">Battle with Celebrities</h4>
+                        <h5 class="text-muted pb-5">Now that you have your look-a-like, its time to join the battle room! Your celebrity will come stacked with their unique stats and ready to fight other celebrities. </h5>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span class="icons">
+                            <img src="images/oscar.png" alt="Oscar" height="45" width="45">
+                        </span>
+                        <h4 class="service-heading pt-4">Win Awards &amp; Collect</h4>
+                        <h5 class="text-muted pb-5">Win a battle and get camera ready for the trophy room. View a running leaderboard, see your achievements and view your collection of celebrities that you have taken down. </h5>
+                    </div>
+                </div>
+            </div>
+        </section>
 
      <!--Footer-->
-    <footer class="page-footer font-small stylish-color-dark">
-
-
-      <div class="row py-1 d-flex justify-content-center">
-
-          <!--Grid column-->
-          <div>
-
-              <!--Copyright-->
-              <h6 class="text-center grey-text p-2">Celebrity Look-A-Fight © 2018</h6>
-              <!--/.Copyright-->
-
-          </div>
-          <!--Grid column-->
-
-      </div>
-
-
-    </footer>
-
+     <footer class="detailed-footer font-small stylish-color-dark">
+      
+            <!--Footer Links-->
+            <div class="container text-center text-md-left">
+        
+                <!-- Footer links -->
+                <div class="row text-center text-md-left mt-3 pb-3">
+        
+                    <!--First column-->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold text-center">Built With</h6>
+                        <hr>
+                        <h6 class="text-uppercase mb-2">Node.js</h6>
+                        <h6 class="text-uppercase mb-2">Nodemon</h6>
+                        <h6 class="text-uppercase mb-2">Express</h6>
+                        <h6 class="text-uppercase mb-2">Mysql</h6>
+                        <h6 class="text-uppercase mb-2">Path</h6>
+                        <h6 class="text-uppercase mb-2">Bootstrap 4.0</h6>
+                        
+                    </div>
+                    <!--/.First column-->
+        
+                    <hr class="w-100 clearfix d-md-none">
+        
+                    <!--Second column-->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold text-center">Credits</h6>
+                        <hr>
+                        <h6 class="text-uppercase mb-2">Icons found at <a class="link" href="https://www.flaticon.com/" target="_blank">Flaticon</a></h6>
+                        <h6 class="text-uppercase mb-2">Canvas found at <a class="link" href="https://codepen.io/anitorious/pen/owLaOd/" target="_blank">Codepen</a></h6>
+                        <h6 class="text-uppercase mb-2">Leaderboard found at <a class="link" href="https://codepen.io/supah/pen/WwrJpw/" target="_blank">Codepen</a></h6>
+                       
+                    </div>
+                    <!--/.Second column-->
+        
+                    <hr class="w-100 clearfix d-md-none">
+        
+                    <!--Third column-->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold text-center">Contact Us</h6>
+                        <hr>
+                        <h6 class="text-uppercase mb-4"><a class="link" href="https://www.linkedin.com/in/skylogiannis/" target="_blank">Vassilis Skylogiannis</a></h6>
+                        <h6 class="text-uppercase mb-4"><a class="link" href="https://www.linkedin.com/in/patricialcarlson/" target="_blank">Patricia Carlson</a></h6>
+                        <h6 class="text-uppercase mb-4"><a class="link" href="https://www.linkedin.com/in/thomascotemedia/" target="_blank">Thomas Cote</a></h6>
+                        <h6 class="text-uppercase mb-4"><a class="link" href="https://www.linkedin.com/in/jayna-neilson-127200149//" target="_blank">Jayna Neilson</a></h6>
+                        
+                    </div>
+                    <!--/.Third column-->
+        
+                    <hr class="w-100 clearfix d-md-none">
+        
+                </div>
+                <!-- Footer links -->
+        
+                <hr>
+        
+                <div class="row py-1 d-flex justify-content-center">
+        
+                    <!--Grid column-->
+                    <div>
+        
+                        <!--Copyright-->
+                        <h6 class="text-center grey-text p-2">Celebrity Look-A-Fight © 2018</h6>
+                        <!--/.Copyright-->
+        
+                    </div>
+                    <!--Grid column-->
+        
+                </div>
+        
+            </div>
+        
+        </footer>
+        <!--/.Footer-->
+    
+         
 
     <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="js/game.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/view.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/game.js"></script>
 </body>
 </html>
