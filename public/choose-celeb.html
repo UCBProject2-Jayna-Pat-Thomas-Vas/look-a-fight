@@ -61,7 +61,7 @@
         <div class="h4">Upload a front facing photo</div>
 
         <div class="mb-3">
-            <div class="squared-image" style="background-image: url(images/profile-placeholder.png);"></div>
+            <div class="squared-image" id="users-image" style="background-image: url(images/profile-placeholder.png);"></div>
           
         </div>
 
@@ -78,7 +78,7 @@
 
       <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
         <div class="h4 text-center text-muted">Who will your look-a-like be?</div>
-        <div class="squared-image" style="background-image: url(images/icon.png);"></div>
+        <img class="squared-image" id="celeb-image-chosen" style="background-image: url(images/icon.png);"></img>
        
                 <table class="table mt-3">
           <tbody>
@@ -108,7 +108,7 @@
     </div>
 
     <div class="text-center">
-    <button type="button" class="btn btn-lg btn-danger mt-3 mb-5">Enter Battleroom</button>
+    <button type="button" class="btn btn-lg btn-danger mt-3 mb-5" id="enter-battle">Enter Battleroom</button>
     </div>
 
 <!-- Step 2 -->
