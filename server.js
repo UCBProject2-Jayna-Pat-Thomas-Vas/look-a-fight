@@ -33,7 +33,7 @@ var models = require('./models');
 //Sync Database and start server
 models.sequelize.sync().then(function() {
 	console.log('Database is all good.');
-	app.listen(5000, function(err) { 
+	app.listen(process.env.PORT || 5000, function(err) { 
     	if (!err)
         	console.log("Site is live");
     	else console.log(err);
