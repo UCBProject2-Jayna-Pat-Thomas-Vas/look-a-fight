@@ -43,7 +43,7 @@ justinBieberQuotesArray = ["Babe, you are the reason to breathe, now your breath
     "It's funny how you used that time to have me replaced, now I will destroy you!",
     "Can't make up your mind, please don't waste my time, now you die!",
     "You give me purpose, now you will bleed!"
-    ]
+    ];
 
 
 
