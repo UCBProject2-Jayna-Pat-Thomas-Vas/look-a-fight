@@ -96,5 +96,9 @@ var justinBieber = new Celebrity("Justin Bieber", "http://res.cloudinary.com/dxx
 var danielCraig = new Celebrity("Daniel Craig", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/DANIEL-CRAIG.jpg", 78, 100, "Torture resistance", false, 0);
 
 
+// in battle.html
+const string = localStorage.getItem('state') // "{\"\"}"
+const state = JSON.parse()
+
 // Pull user's celebrity data into battle room with random opponent celebrity.
 
