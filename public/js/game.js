@@ -1,3 +1,16 @@
+$(window).on("load", function(){
+  const info = localStorage.getItem('info');
+  const parse = JSON.parse(info);
+
+  $("img#users-game-celeb-image").attr("src", parse.image);
+  $("div#users-game-celeb-name").text(parse.name);
+
+}); // Document load closing bracket.
+
+
+
+
+
 katyPerryQuotesArray = ["Baby your a firework, now it's time to burn!", 
     "I've got the eye of the tiger, now you die!", 
     "I am a champion and you're gunna hear me roar, now you must pay!",
@@ -94,11 +107,6 @@ var rowanAtkinson = new Celebrity("Rowan Atkinson", "http://res.cloudinary.com/d
 var justinTimberlake = new Celebrity("Justin Timberlake", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/justin-timberlake.jpg", 78, 100, "Annoying crying", false, 0);
 var justinBieber = new Celebrity("Justin Bieber", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Justin-Bieber.jpg", 78, 100, "Vaguely chiseled bodyslam", false, 0);
 var danielCraig = new Celebrity("Daniel Craig", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/DANIEL-CRAIG.jpg", 78, 100, "Torture resistance", false, 0);
-
-
-// in battle.html
-const string = localStorage.getItem('state') // "{\"\"}"
-const state = JSON.parse()
 
 // Pull user's celebrity data into battle room with random opponent celebrity.
 

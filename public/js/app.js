@@ -33,7 +33,7 @@ const celebrityInfoDictionary = {
 		strength: 78,
 		hitpoints: 100,
 		wins: 0,
-		special: "Annoying crying" 
+		special: "Crying" 
 	}
 };
 
@@ -88,20 +88,14 @@ fileUpload.addEventListener('change', function(event){
 		$("#celeb-wins-choose").append(info.wins);
 		$("#celeb-special-choose").append(info.special);
 
-		window.localStorage.setItem("state", JSON.stringify(state));		
+		const localStorage = window.localStorage
+
+		localStorage.setItem("info", JSON.stringify(info));		
 
 	}).fail(function(errorThrown){
 		console.error(errorThrown);
 	}); 	
 };
-
-$("#enter-battle").on("click", function(){
-	window.location("/battle.html");
-})
-
-
-
-// Add users uploaded image to the database.
 
 
 
