@@ -54,7 +54,7 @@
     </div>
 
     <!-- Step 1 -->
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center choose-container">
 
       <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
 
@@ -78,12 +78,8 @@
 
       <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
         <div class="h4 text-center text-muted">Who will your look-a-like be?</div>
-<<<<<<< HEAD
         <div class="squared-image" style="background-image: url(images/icon.png);"></div>
        
-=======
-        <img class="squared-image" id="look-alike-image" style="background-image: url(images/icon.png);"></img>
->>>>>>> 9ba66c8f8039616786a9503f3b92bcc0a879f697
                 <table class="table mt-3">
           <tbody>
             <tr>
@@ -115,10 +111,10 @@
     <button type="button" class="btn btn-lg btn-danger mt-3 mb-5">Enter Battleroom</button>
     </div>
 
-<!-- Step 2
-    <div class="d-flex justify-content-center">
+<!-- Step 2 -->
+    <div class="d-flex justify-content-center choose-container">
 
-      <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
+      <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
 
         <div class="h4">Running facial recognition...</div>
 
@@ -128,7 +124,7 @@
 
       </div>
 
-      <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
+      <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
         <div class="h4 text-center text-muted">Finding your celebrity<br>look-a-like</div>
         <div class="progress padding">
             <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -137,10 +133,10 @@
       </div>
     </div>
 
-    Step 3
-    <div class="d-flex justify-content-center">
+    <!-- Step 3 -->
+    <div class="d-flex justify-content-center choose-container">
 
-      <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
+      <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
 
         <div class="h4">Your look-a-like is...</div>
 
@@ -150,7 +146,7 @@
 
       </div>
 
-      <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
+      <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
         <div class="h4 text-center">Ricky Martin!</div>
 
         <div class="mb-3">
@@ -159,22 +155,26 @@
 
         <table class="table">
           <tbody>
+           <tr>
+              <th scope="row">Name</th>
+              <td id="celeb-name-choose"></td>
+            </tr>
             <tr>
-                <th scope="row">Name</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">Strength</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">Hitpoints</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">Total Wins</th>
-                <td></td>
-              </tr>
+              <th scope="row">Strength</th>
+              <td id="celeb-strength-choose"></td>
+            </tr>
+            <tr>
+              <th scope="row">Hitpoints</th>
+              <td id="celeb-hitpoints-choose"></td>
+            </tr>
+            <tr>
+              <th scope="row">Total Wins</th>
+              <td id="celeb-wins-choose"></td>
+            </tr>
+            <tr>
+              <th scope="row">Special</th>
+              <td id="celeb-special-choose"></td>
+            </tr>
           </tbody>
         </table>
         
