@@ -140,10 +140,11 @@ p {
   }
 
   .squared-image {
-    width: 286px;
-    height: 286px;
+    max-width: 286px;
+    padding-top: 100%;
     background-position: center;
     background-size: cover;
+    border-radius: 6px;
   }
 
 /*--------------------
@@ -438,4 +439,19 @@ Leaderboard
   opacity: 1;
   -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
+}
+
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 480px) {
+  
+}
+
+
+.battle-field .card, .choose-container .card {
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 50%;
 }

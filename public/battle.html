@@ -63,30 +63,29 @@
 
 
       <div class="battle-field">
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center align-items-start">
 
-          <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
+          <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
             <div class="h6">Health</div>
             <div class="health-bar"><div class="health"></div></div>
             <div class="progress mb-3">
                 <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             <div class="">
-              <img width="300px" src="https://pbs.twimg.com/profile_images/378800000040874495/f9841f8361b245eeb1645015ac55a4e7.png">
+              <img id="users-game-celeb-image" width="300px" src="https://pbs.twimg.com/profile_images/378800000040874495/f9841f8361b245eeb1645015ac55a4e7.png">
             </div>
             <div class="h5 mt-3 text-uppercase"><a>YOU:&nbsp&nbsp</a>Ricky Martin</div>
           </div>
 
-          <h1><span class="badge badge-secondary">VS</span></h1>
+          <h1><span class="badge badge-secondary d-none d-sm-block m-1 m-md-3">VS</span></h1>
 
-          <div class="card border-danger upload-card p-3 m-3" style="max-width: 20rem;">
+          <div class="card border-danger upload-card p-2 p-md-3 m-1 m-md-3" style="max-width: 20rem;">
             <div class="h6">Health</div>
             <div class="progress mb-3">
                 <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            <div class="">
-              <img width="300px" src="https://a2-images.myspacecdn.com/images04/4/c3989a00e2954580a2748273a5727887/300x300.jpg">
-            </div>
+            
+            <div class="squared-image" style="background-image: url(https://a2-images.myspacecdn.com/images04/4/c3989a00e2954580a2748273a5727887/300x300.jpg);"></div>
             <div class="h5 mt-3 text-uppercase"><a>OPPONENT:&nbsp&nbsp</a>Enrique Iglesias </div>
           </div>
 
@@ -95,7 +94,7 @@
 
           <div class="battle-buttons">
           </div>
-          <ul class="controls">
+          <ul id="battle-btn" class="controls">
             <!-- <li class="faces-button"></li> -->
             <li class="gloves-button"></li>
             <!-- <li class="oscar-button"></li> -->
@@ -127,7 +126,9 @@
 
 
     <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="js/game.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/view.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/game.js"></script>
 </body>
 </html>
