@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "lookafight_db",
-    "host": "127.0.0.1",
+    "username": "c855hqf24abu7ovi",
+    "password": "yrf3fhrkj4oeep1u",
+    "database": "xfi326tfskham6us",
+    "host": "gp96xszpzlqupw4k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "lookafight_db",
-    "host": "127.0.0.1",
+    "username": "c855hqf24abu7ovi",
+    "password": "yrf3fhrkj4oeep1u",
+    "database": "xfi326tfskham6us",
+    "host": "gp96xszpzlqupw4k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "lookafight_db",
-    "host": "127.0.0.1",
+    "username": "c855hqf24abu7ovi",
+    "password": "yrf3fhrkj4oeep1u",
+    "database": "xfi326tfskham6us",
+    "host": "gp96xszpzlqupw4k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }

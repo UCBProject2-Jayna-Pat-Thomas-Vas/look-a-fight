@@ -1,21 +1,69 @@
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("user", {
-    id: {type: DataTypes.INTEGER, autoincrement: true, primaryKey: true},
-    name: {type: DataTypes.STRING, allowNull: false},
-    email: {type: DataTypes.STRING, allowNull: false, isEmail: true},
-    imageURL: {type: DataTypes.STRING, isUrl: true},
-    totalWins: {type: DataTypes.INTEGER, defaultValue: 0, allowNull: false},
-    createdAt: {type: DataTypes.DATE, defaultValue: DataTypes.NOW,allowNull: false},
-    updatedAt: {type: DataTypes.DATE, allowNull: true},
-    delete_flag: {type: DataTypes.BOOLEAN, default: false, allowNull: false},
-    delete_date: {type: DataTypes.BOOLEAN, allowNull: true}
+
+module.exports = function(sequelize, Sequelize) {
+  var User = sequelize.define("User", {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+      },
+
+    name:{
+          type: Sequelize.STRING,
+          allowNull: false
+        },
+
+    userName:{
+              type: Sequelize.STRING,
+              allowNull: false
+            },
+
+    email: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            isEmail: true
+            },
+
+    imageURL: {
+              type: Sequelize.STRING,
+              isUrl: true
+              },
+
+    totalWins: {
+                type: Sequelize.INTEGER,
+                defaultValue: 0,
+                allowNull: false
+                },
+
+    createdAt: {
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.NOW,
+                allowNull: false
+              },
+
+    updatedAt: {
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.NOW,
+                allowNull: true
+              },
+
+    deleteFlag: {
+                  type: Sequelize.BOOLEAN,
+                  default: false,
+                  allowNull: false
+                },
+    deleteDate: {
+                  type: Sequelize.BOOLEAN,
+                  allowNull: true
+                },
+    password: {
+              type:Sequelize.STRING,
+              allowNull: false
+              }
   });
 
+// Associate the user to the games model
   User.associate = function(models) {
-    // Associating Player with Games
-    // When an Player is deleted, also delete any associated Games
-    User.hasMany(models.Games, {
-    });
+      models.User.hasMany(models.Game, {foreignKey: 'userId'});
   };
 
   return User;
