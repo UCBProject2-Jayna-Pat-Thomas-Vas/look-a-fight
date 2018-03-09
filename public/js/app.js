@@ -8,7 +8,40 @@ var userImageUrl = "";
 var faceToken = "";
 var facesetToken = "f7424dd25795113590c85d57387605d4";
 var facePlusReturnToken = "";
-var userCelebChosenImage = "";
+var userCelebChosen = "";
+
+const celebrityInfoDictionary = {
+	"e714a0332b9fcba30331839c11a82a72": {
+		image: "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg",
+		name: "Tom Hanks",
+		strength: 78,
+		hitpoints: 100,
+		wins: 0,
+		special: "Loud yelling" 
+	},
+	"588b9e5c05803f9316f539683a6470f3": {
+		image: "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Katy-Perry.jpg",
+		name: "Katy Perry",
+		strength: 78,
+		hitpoints: 100,
+		wins: 0,
+		special: "Fireworks",
+		quotes: {
+			one: "Baby your a firework, now it's time to burn!", 
+   			two: "I've got the eye of the tiger, now you die!", 
+    		three: "I am a champion and you're gunna hear me roar, now you must pay!"}
+	},
+	"b41dd94a22a363156953339e3fc0be02": {
+		image: "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/justin-timberlake.jpg",
+		name: "Justin Timberlake",
+		strength: 78,
+		hitpoints: 100,
+		wins: 0,
+		special: "Crying" 
+	}
+};
+
+
 
 fileUpload.addEventListener('change', function(event){
 	var file = event.target.files[0];
@@ -26,10 +59,9 @@ fileUpload.addEventListener('change', function(event){
 	}).then(function(res){
 		console.log(res);
 		userImageUrl = res.data.url;
-		$("img#image-container").prop("src", userImageUrl);		
+		$("#users-image").css("background-image", "url("+userImageUrl+")");	
 		$("#compare-button").on('click', function(){
 			checkCelebImages();
-			otherDocTest();
 		});
 	}).catch(function(err){
 		console.error(err);
@@ -50,75 +82,27 @@ fileUpload.addEventListener('change', function(event){
   	}
 	}).done(function(res){
 		console.log(res);
-		if (res.faces.length === 0){
-			$("img#look-alike-image").prop("src", "https://i.imgflip.com/g7hps.jpg");
-		} else {
 		facePlusReturnToken = res.results[0].face_token;
-		propCelebImage();
-		}
+		const info = celebrityInfoDictionary[facePlusReturnToken]
+		// populate elements
+		$("#celeb-image-chosen").css("background-image", "url("+info.image+")");
+		$("#celeb-name-choose").append(info.name);
+		$("#celeb-strength-choose").append(info.strength);
+		$("#celeb-hitpoints-choose").append(info.hitpoints);
+		$("#celeb-wins-choose").append(info.wins);
+		$("#celeb-special-choose").append(info.special);
+
+		const localStorage = window.localStorage;
+		const opponent = celebrityInfoDictionary["e714a0332b9fcba30331839c11a82a72"];
+		localStorage.setItem("info", JSON.stringify(info));
+		localStorage.setItem("opponent", JSON.stringify(opponent));
+
+		console.log(opponent);
+
 	}).fail(function(errorThrown){
 		console.error(errorThrown);
 	}); 	
 };
-
-function propCelebImage(){
-	if (facePlusReturnToken === "e714a0332b9fcba30331839c11a82a72"){
-		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg");
-		$("#celeb-name-choose").append("Tom Hanks");
-		$("#celeb-strength-choose").append(78);
-		$("#celeb-hitpoints-choose").append(100);
-		$("#celeb-wins-choose").append(0);
-		$("#celeb-special-choose").append("Loud yelling");
-	} else if (facePlusReturnToken === "588b9e5c05803f9316f539683a6470f3"){
-		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Katy-Perry.jpg");
-		$("#celeb-name-choose").append("Katy Perry");
-		$("#celeb-strength-choose").append(78);
-		$("#celeb-hitpoints-choose").append(100);
-		$("#celeb-wins-choose").append(0);
-		$("#celeb-special-choose").append("Fireworks");
-	} else if (facePlusReturnToken === "c34abbd64f6b57334a567550e202b7a1"){
-		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/taylor-swift.jpg");
-		$("#celeb-name-choose").append("Taylor Swift");
-		$("#celeb-strength-choose").append(78);
-		$("#celeb-hitpoints-choose").append(100);
-		$("#celeb-wins-choose").append(0);
-		$("#celeb-special-choose").append("Stealing friends");
-	} else if (facePlusReturnToken === "d255f97ea3d42cf0166a3b25c2b627f2"){
-		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Rowan-Atkinson.jpg");
-		$("#celeb-name-choose").append("Rowan Atkinson");
-		$("#celeb-strength-choose").append(78);
-		$("#celeb-hitpoints-choose").append(100);
-		$("#celeb-wins-choose").append(0);
-		$("#celeb-special-choose").append("Death stare");
-	} else if (facePlusReturnToken === "b41dd94a22a363156953339e3fc0be02"){
-		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/justin-timberlake.jpg");
-		$("#celeb-name-choose").append("Justin Timberlake");
-		$("#celeb-strength-choose").append(78);
-		$("#celeb-hitpoints-choose").append(100);
-		$("#celeb-wins-choose").append(0);
-		$("#celeb-special-choose").append("Annoying crying");
-	} else if (facePlusReturnToken === "04527dbf52e1b8cc5cfc9a05e9e200d1"){
-		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Justin-Bieber.jpg");
-		$("#celeb-name-choose").append("Justin Bieber");
-		$("#celeb-strength-choose").append(78);
-		$("#celeb-hitpoints-choose").append(100);
-		$("#celeb-wins-choose").append(0);
-		$("#celeb-special-choose").append("Vaguely chisled bodyslam");
-	} else if (facePlusReturnToken === "b1d69b7280147a95207a12028e722546"){
-		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/DANIEL-CRAIG.jpg");
-		$("#celeb-name-choose").append("Daniel Craig");
-		$("#celeb-strength-choose").append(78);
-		$("#celeb-hitpoints-choose").append(100);
-		$("#celeb-wins-choose").append(0);
-		$("#celeb-special-choose").append("Torture resistance");
-	} else {
-		$("img#look-alike-image").prop("src", "https://i.imgflip.com/g7hps.jpg");
-	}
-};
-
-
-
-// Add users uploaded image to the database.
 
 
 
@@ -221,3 +205,57 @@ function propCelebImage(){
 // 	});
 //  };
 
+// function propCelebImage(){
+// 	if (facePlusReturnToken === "e714a0332b9fcba30331839c11a82a72"){
+// 		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Tom-Hanks.jpg");
+// 		$("#celeb-name-choose").append("Tom Hanks");
+// 		$("#celeb-strength-choose").append(78);
+// 		$("#celeb-hitpoints-choose").append(100);
+// 		$("#celeb-wins-choose").append(0);
+// 		$("#celeb-special-choose").append("Loud yelling");
+// 	} else if (facePlusReturnToken === "588b9e5c05803f9316f539683a6470f3"){
+// 		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Katy-Perry.jpg");
+// 		$("#celeb-name-choose").append("Katy Perry");
+// 		$("#celeb-strength-choose").append(78);
+// 		$("#celeb-hitpoints-choose").append(100);
+// 		$("#celeb-wins-choose").append(0);
+// 		$("#celeb-special-choose").append("Fireworks");
+// 	} else if (facePlusReturnToken === "c34abbd64f6b57334a567550e202b7a1"){
+// 		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/taylor-swift.jpg");
+// 		$("#celeb-name-choose").append("Taylor Swift");
+// 		$("#celeb-strength-choose").append(78);
+// 		$("#celeb-hitpoints-choose").append(100);
+// 		$("#celeb-wins-choose").append(0);
+// 		$("#celeb-special-choose").append("Stealing friends");
+// 	} else if (facePlusReturnToken === "d255f97ea3d42cf0166a3b25c2b627f2"){
+// 		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Rowan-Atkinson.jpg");
+// 		$("#celeb-name-choose").append("Rowan Atkinson");
+// 		$("#celeb-strength-choose").append(78);
+// 		$("#celeb-hitpoints-choose").append(100);
+// 		$("#celeb-wins-choose").append(0);
+// 		$("#celeb-special-choose").append("Death stare");
+// 	} else if (facePlusReturnToken === "b41dd94a22a363156953339e3fc0be02"){
+// 		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/justin-timberlake.jpg");
+// 		$("#celeb-name-choose").append("Justin Timberlake");
+// 		$("#celeb-strength-choose").append(78);
+// 		$("#celeb-hitpoints-choose").append(100);
+// 		$("#celeb-wins-choose").append(0);
+// 		$("#celeb-special-choose").append("Annoying crying");
+// 	} else if (facePlusReturnToken === "04527dbf52e1b8cc5cfc9a05e9e200d1"){
+// 		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/Justin-Bieber.jpg");
+// 		$("#celeb-name-choose").append("Justin Bieber");
+// 		$("#celeb-strength-choose").append(78);
+// 		$("#celeb-hitpoints-choose").append(100);
+// 		$("#celeb-wins-choose").append(0);
+// 		$("#celeb-special-choose").append("Vaguely chisled bodyslam");
+// 	} else if (facePlusReturnToken === "b1d69b7280147a95207a12028e722546"){
+// 		$("img#look-alike-image").prop("src", "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/DANIEL-CRAIG.jpg");
+// 		$("#celeb-name-choose").append("Daniel Craig");
+// 		$("#celeb-strength-choose").append(78);
+// 		$("#celeb-hitpoints-choose").append(100);
+// 		$("#celeb-wins-choose").append(0);
+// 		$("#celeb-special-choose").append("Torture resistance");
+// 	} else {
+// 		$("img#look-alike-image").prop("src", "https://i.imgflip.com/g7hps.jpg");
+// 	}
+// };
