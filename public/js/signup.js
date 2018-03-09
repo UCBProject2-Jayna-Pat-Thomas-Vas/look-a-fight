@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 	// Getting a reference to the input field where user adds a new user
 	$(document).on("click", "#sign-up-submit", insertUser);
+	$(document).on("click", "#button-save-changes", updateUser);
  
 	// Getting users from database when page loads
 	getUsers();
@@ -25,26 +26,28 @@ $(document).ready(function() {
 	};
 
 	$.post("/api/users", user, getUsers);
-    // $newItemInput.val("");
+    location.assign("../../choose-celeb.html");
   };
-});
+
  
-	// // This function deletes a user when the user clicks the delete button
-	// function deleteUser(event) {
-	// event.stopPropagation();
-	// var id = $(this).data("id");
-	// $.ajax({
-	//   method: "DELETE",
-	//   url: "/api/users/" + id
-	// }).then(console.log("Player has been deleted"));
-	// }
+	// This function deletes a user when the user clicks the delete button
+	function deleteUser(event) {
+	event.stopPropagation();
+	var id = $(this).data("id");
+	$.ajax({
+	  method: "DELETE",
+	  url: "/api/users/" + id
+	}).then(console.log("Player has been deleted"));
+	location.assign("../../index.html");
+	}
 
-	// // This function updates a user in our database
-	// function updateUser(users) {
-	// $.ajax({
-	//   method: "PUT",
-	//   url: "/api/users",
-	//   data: users
-	// }).then(console.log("Player has been updated."));
-	// }
-
+	// This function updates a user in our database
+	function updateUser(users) {
+	$.ajax({
+	  method: "PUT",
+	  url: "/api/users" + id,
+	  data: users
+	}).then(console.log("Player has been updated."));
+	location.assign("../../index.html");
+	}
+});
