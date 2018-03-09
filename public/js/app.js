@@ -25,7 +25,11 @@ const celebrityInfoDictionary = {
 		strength: 78,
 		hitpoints: 100,
 		wins: 0,
-		special: "Fireworks" 
+		special: "Fireworks",
+		quotes: {
+			one: "Baby your a firework, now it's time to burn!", 
+   			two: "I've got the eye of the tiger, now you die!", 
+    		three: "I am a champion and you're gunna hear me roar, now you must pay!"}
 	},
 	"b41dd94a22a363156953339e3fc0be02": {
 		image: "http://res.cloudinary.com/dxxdhfkqw/image/upload/v1519795838/justin-timberlake.jpg",
@@ -88,9 +92,12 @@ fileUpload.addEventListener('change', function(event){
 		$("#celeb-wins-choose").append(info.wins);
 		$("#celeb-special-choose").append(info.special);
 
-		const localStorage = window.localStorage
+		const localStorage = window.localStorage;
+		const opponent = celebrityInfoDictionary["e714a0332b9fcba30331839c11a82a72"];
+		localStorage.setItem("info", JSON.stringify(info));
+		localStorage.setItem("opponent", JSON.stringify(opponent));
 
-		localStorage.setItem("info", JSON.stringify(info));		
+		console.log(opponent);
 
 	}).fail(function(errorThrown){
 		console.error(errorThrown);
